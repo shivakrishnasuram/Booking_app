@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import GoogleIcon from '@mui/icons-material/Google';
+import "./Regi.css"
 import "./App.css"
 import { Button } from '@mui/material';
 
