@@ -1,154 +1,109 @@
-/* App.css */
+/* Regi.css - Registration Form Styling */
+
+/* Color palette variables */
 :root {
-    --primary: #F7374F;
-    --secondary: #88304E;
-    --tertiary: #522546;
-    --dark: #2C2C2C;
+  --cream: #F5EEDD;
+  --mint: #7AE2CF;
+  --teal: #077A7D;
+  --navy: #06202B;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.register-paper {
+  padding: 2rem;
+  border-radius: 12px !important;
+  background-color: white !important;
+  box-shadow: 0 8px 24px rgba(6, 32, 43, 0.12) !important;
+  border-top: 4px solid var(--teal);
+}
+
+.register-title {
+  color: var(--navy);
+  margin-bottom: 1.5rem !important;
+  font-weight: 600 !important;
+  text-align: center;
+  position: relative;
+}
+
+.register-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background-color: var(--mint);
+  border-radius: 2px;
+}
+
+.register-form {
+  margin-top: 2rem;
+}
+
+.form-field {
+  margin-bottom: 1rem !important;
+}
+
+/* Override MUI input styles */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--teal) !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--teal) !important;
+}
+
+/* Style the Select dropdown */
+.MuiSelect-select {
+  background-color: white !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: var(--cream) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: rgba(122, 226, 207, 0.2) !important;
+}
+
+/* Submit button styling */
+.submit-button {
+  margin-top: 2rem !important;
+  background-color: var(--teal) !important;
+  color: white !important;
+  padding: 0.75rem 0 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  text-transform: uppercase !important;
+  border-radius: 6px !important;
+  transition: all 0.3s ease !important;
+}
+
+.submit-button:hover {
+  background-color: var(--navy) !important;
+  box-shadow: 0 4px 12px rgba(7, 122, 125, 0.3) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .register-paper {
+    padding: 1.5rem;
   }
   
-  body {
-    font-family: 'Roboto', sans-serif;
-    background-color: var(--dark);
-    color: white;
-    margin: 0;
-    padding: 0;
+  .register-title {
+    font-size: 1.75rem !important;
   }
-  
-  .register-container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 30px;
-    border-radius: 10px;
-    background-color: rgba(44, 44, 44, 0.8);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  }
-  
-  h2 {
-    text-align: center;
-    color: var(--primary);
-    margin-bottom: 30px;
-    font-weight: 600;
-    font-size: 28px;
-  }
-  
-  input, select {
-    display: block;
-    width: 100%;
-    margin-bottom: 15px;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: var(--dark);
-    font-size: 16px;
-    box-sizing: border-box;
-    transition: all 0.3s ease;
-  }
-  
-  input:focus, select:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--primary);
-  }
-  
-  select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232C2C2C' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 16px;
-  }
-  
-  .submit-btn {
-    width: 100%;
-    padding: 12px;
-    background-color: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 10px;
-  }
-  
-  .submit-btn:hover {
-    background-color: var(--secondary);
-    transform: translateY(-2px);
-  }
-  
-  .submit-btn:active {
-    transform: translateY(0);
-  }
-  
-  .social-login {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  .google-btn {
-    background-color: white !important;
-    color: var(--dark) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: 500;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-  
-  .google-btn:hover {
-    background-color: #f1f1f1 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
-  .form-divider {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .form-divider::before,
-  .form-divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  }
-  
-  .form-divider span {
-    padding: 0 10px;
-    font-size: 14px;
-  }
-  
-  /* Error styling */
-  .error-message {
-    color: var(--primary);
-    font-size: 14px;
-    margin-top: -10px;
-    margin-bottom: 15px;
-  }
-  
-  /* Animation for form submission */
-  @keyframes submitPulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(247, 55, 79, 0.7);
-    }
-    70% {
-      box-shadow: 0 0 0 10px rgba(247, 55, 79, 0);
-    }
-    100% {
-      box-shadow: 0 0 0 0 rgba(247, 55, 79, 0);
-    }
-  }
-  
-  .submit-animation {
-    animation: submitPulse 1.5s infinite;
-  }
+}
